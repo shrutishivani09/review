@@ -2,12 +2,13 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHAT</title>
 </head>
 <body>
 <form th:object="${chatForm}" action="#" th:action="@{/chat}" method="POST">
-    <label for="username">Username:</label>
-    <input id="username" type="text" th:field="*{username}">
     <label for="messageText">Message Text:</label>
     <input id="messageText" type="text" th:field="*{messageText}">
     <label for="messageType">Message Type: </label>
@@ -22,7 +23,7 @@
 </form>
 <div th:each="chatMessage : ${chatMessage}">
     <span th:text="${chatMessage.username}">Username</span>
-    <span th:text="${chatMessage.message}">Hello World</span>
+    <span th:text="${chatMessage.messageText}">Hello World</span>
 </div>
 </body>
 </html>
