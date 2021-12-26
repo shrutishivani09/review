@@ -2,7 +2,6 @@ package com.udacity.jwdnd.c1.review.controller;
 
 import com.udacity.jwdnd.c1.review.model.ChatForm;
 import com.udacity.jwdnd.c1.review.service.MessageService;
-import org.apache.logging.log4j.message.Message;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +23,7 @@ public class ChatController {
 
     @GetMapping
     public String getChatPage(ChatForm chatForm, Model model){
-        model.addAttribute("chatMessages", this.messageService.getChatMessage());
+        model.addAttribute("chatMessage", this.messageService.getChatMessage());
         return "chat";
     }
 
@@ -33,7 +32,7 @@ public class ChatController {
         chatForm.setUsername(authentication.getName());
         this.messageService.addMessage(chatForm);
         chatForm.setMessageText("");
-        model.addAttribute("chatMessages",this.messageService.getChatMessage());
+        model.addAttribute("chatMessage",this.messageService.getChatMessage());
         return "chat";
     }
 

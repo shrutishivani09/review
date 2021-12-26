@@ -1,9 +1,9 @@
 package com.udacity.jwdnd.c1.review.model;
 
 public class ChatMessage {
-    Integer messageId;
-    String username;
-    String messageText;
+    private Integer messageId;
+    private String username;
+    private String messageText;
 
     public void setMessageId(Integer messageId) {
         this.messageId = messageId;

@@ -1,9 +1,9 @@
 package com.udacity.jwdnd.c1.review.model;
 
 public class ChatForm {
-    String username;
-    String messageType;
-    String messageText;
+   private String username;
+   private String messageType;
+   private String messageText;
 
     public String getUsername(){
         return username;

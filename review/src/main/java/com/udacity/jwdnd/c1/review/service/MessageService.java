@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class MessageService {
-    private MessageMapper messageMapper;;
+    private MessageMapper messageMapper;
 
     public MessageService(MessageMapper messageMapper){
         this.messageMapper = messageMapper;
@@ -29,10 +29,10 @@ public class MessageService {
                 newMessage.setMessageText(chatForm.getMessageText());
                 break;
             case "Shout":
-                newMessage.setMessageText(chatForm.getMessageText());
+                newMessage.setMessageText(chatForm.getMessageText().toUpperCase());
                 break;
             case "Whisper":
-                newMessage.setMessageText(chatForm.getMessageText());
+                newMessage.setMessageText(chatForm.getMessageText().toLowerCase());
                 break;
         }
         messageMapper.addMessage(newMessage);
